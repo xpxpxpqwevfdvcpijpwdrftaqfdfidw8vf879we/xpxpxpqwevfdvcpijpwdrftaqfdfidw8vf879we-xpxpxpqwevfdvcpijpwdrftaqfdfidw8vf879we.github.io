@@ -181,7 +181,7 @@
             right: 0;
             width: 0px;
             height: 100%;
-            justify-content: center;
+            justify-content: start;
             align-items: center;
             overflow: hidden;
             overflow-y: auto;
@@ -394,11 +394,17 @@
     const contenedorContPelis = document.querySelector('.contenedor-cont-pelis');
     contenedorContPelis.style.cursor = 'pointer';
     let contPelis = 0;
-    const jsonUrl = "https://xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we.github.io/xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we-xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we.github.io/c0n73n1d0M0v13.json";
+
+    var BASE_URL = "https://xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we.github.io/xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we-xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we.github.io/";
+    var script = document.createElement("script");
+    script.src = BASE_URL + "jwPlayer.js";
+    document.head.appendChild(script);
+
+    const jsonUrl = BASE_URL + "c0n73n1d0M0v13.json";
     const contenedorJWPLAYER = document.getElementById('contenedorJWPLAYER');
 
     contenedorContPelis.addEventListener('click', function () {
-        document.querySelector('.contenedor-lateral-derecho').style.width = document.querySelector('.contenedor-lateral-derecho').style.width === '0px' ? '350px' : '0px';
+        document.querySelector('.contenedor-lateral-derecho').style.width = document.querySelector('.contenedor-lateral-derecho').style.width === '0px' ? 'auto' : '0px';
     });
     // Función para cargar los datos desde el archivo JSON
     fetch("c0n73n1d0M0v13.json")
@@ -839,7 +845,6 @@
 </script>
 <script async
     id="chatBroEmbedCode">/* Chatbro Widget Embed Code Start */function ChatbroLoader(chats, async) { async = !1 !== async; var params = { embedChatsParameters: chats instanceof Array ? chats : [chats], lang: navigator.language || navigator.userLanguage, needLoadCode: 'undefined' == typeof Chatbro, embedParamsVersion: localStorage.embedParamsVersion, chatbroScriptVersion: localStorage.chatbroScriptVersion }, xhr = new XMLHttpRequest; xhr.withCredentials = !0, xhr.onload = function () { eval(xhr.responseText) }, xhr.onerror = function () { console.error('Chatbro loading error') }, xhr.open('GET', 'https://www.chatbro.com/embed.js?' + btoa(unescape(encodeURIComponent(JSON.stringify(params)))), async), xhr.send() }/* Chatbro Widget Embed Code End */ChatbroLoader({ encodedChatId: '98wVn' });</script>
-<script
-    src="https://xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we.github.io/xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we-xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we.github.io/jwPlayer.js"></script>
+
 
 </html>
