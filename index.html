@@ -411,6 +411,7 @@
         .then((response) => response.json()) // Convierte la respuesta en JSON
         .then((data) => {
             //data.peliculas.sort((a, b) => b.fecha - a.fecha);
+            data.peliculas.reverse();
             //Modificar y validar según se agregen categorías del menú
             data.peliculas.forEach((video) => {
                 if (video.titulo) {
