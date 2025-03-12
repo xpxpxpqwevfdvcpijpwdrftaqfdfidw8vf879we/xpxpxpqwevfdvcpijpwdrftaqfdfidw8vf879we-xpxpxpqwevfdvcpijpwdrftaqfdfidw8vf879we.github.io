@@ -414,7 +414,16 @@
             data.peliculas.reverse();
             //Modificar y validar según se agregen categorías del menú
             data.peliculas.forEach((video) => {
-                if (video.titulo) {
+                if (video.titulo 
+                && !video.titulo.includes("rumble") 
+                && !video.titulo.includes(".mp4")
+                && !video.descripcion.includes("rumble") 
+                && !video.descripcion.includes(".mp4")
+                && !video.fecha.includes("rumble") 
+                && !video.fecha.includes(".mp4")
+                && !video.duracion.includes("rumble") 
+                && !video.duracion.includes(".mp4")
+            ) {
                     crearCarteles(video);
                     contPelis += 1;
                     contenedorContPelis.textContent = `Total: ${contPelis} películas. | Subiendo todos los días!!`;
@@ -486,7 +495,7 @@
         poster.alt = cartel.nombreCanal;
         poster.classList.add("lazy"); // Agregamos una clase para identificarlas 
         poster.style.opacity = '0';
-        poster.style.transition = 'opacity 0.8s ease-in-out';
+        poster.style.transition = 'opacity 0.2s ease-in-out';
 
         // Agregar la imagen al DOM
         document.body.appendChild(poster);
