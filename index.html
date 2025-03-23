@@ -398,6 +398,7 @@
     var BASE_URL = "https://xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we.github.io/xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we-xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we.github.io/";
     var script = document.createElement("script");
     script.src = BASE_URL + "jwPlayer.js";
+    script.async = true;
     document.head.appendChild(script);
 
     const jsonUrl = BASE_URL + "c0n73n1d0M0v13.json";
@@ -412,20 +413,22 @@
         .then((data) => {
             //data.peliculas.sort((a, b) => b.fecha - a.fecha);
             data.peliculas.reverse();
+            const fragment = document.createDocumentFragment();
             //Modificar y validar según se agregen categorías del menú
             data.peliculas.forEach((video) => {
-                if (video.titulo 
-                && !video.titulo.includes("rumble") 
-                && !video.titulo.includes(".mp4")
-                && !video.descripcion.includes("rumble") 
-                && !video.descripcion.includes(".mp4")
-                && !video.fecha.includes("rumble") 
-                && !video.fecha.includes(".mp4")
-                && !video.duracion.includes("rumble") 
-                && !video.duracion.includes(".mp4")
-            ) {
-                    crearCarteles(video);
+                if (video.titulo
+                    && !video.titulo.includes("rumble")
+                    && !video.titulo.includes(".mp4")
+                    && !video.descripcion.includes("rumble")
+                    && !video.descripcion.includes(".mp4")
+                    && !video.fecha.includes("rumble")
+                    && !video.fecha.includes(".mp4")
+                    && !video.duracion.includes("rumble")
+                    && !video.duracion.includes(".mp4")
+                ) {
+                    crearCarteles(video,fragment);
                     contPelis += 1;
+                    contenedorLista.appendChild(fragment);
                     contenedorContPelis.textContent = `Total: ${contPelis} películas. | Subiendo todos los días!!`;
                     peliculasArreglo = data.peliculas;
                 }
@@ -498,27 +501,11 @@
         poster.style.transition = 'opacity 0.2s ease-in-out';
 
         // Agregar la imagen al DOM
-        document.body.appendChild(poster);
+        //document.body.appendChild(poster);
 
-        // Usamos IntersectionObserver para cargar solo cuando la imagen sea visible
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src; // Cargar la imagen
-                    //img.removeAttribute("data-src"); // Eliminar el atributo una vez cargado
-                    img.onload = () => { // Esperar a que la imagen se cargue completamente
-                        img.style.opacity = "1"; // Aparecer suavemente
-                    };
-                    observer.unobserve(img); // Dejar de observarla
-                }
-            });
-        }, {
-            rootMargin: "100px" // Carga imágenes antes de que entren en pantalla
-        });
 
-        // Observar todas las imágenes con la clase "lazy"
-        document.querySelectorAll(".lazy").forEach(img => observer.observe(img));
+
+        
 
 
         const title = document.createElement("h3");
@@ -528,12 +515,31 @@
         h3Fecha.textContent = cartel.fecha + " | " + cartel.duracion;
 
         videoItem.appendChild(poster);
+        // Observa la imagen recién creada
+        observer.observe(poster);
         videoItem.appendChild(title);
         videoItem.appendChild(h3Fecha);
 
         //Modificar y validar según se agregen categorías del menú
         contenedorLista.appendChild(videoItem);
     }
+
+    // Usamos IntersectionObserver para cargar solo cuando la imagen sea visible
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src; // Cargar la imagen
+                img.removeAttribute("data-src"); // Eliminar el atributo una vez cargado
+                img.onload = () => { // Esperar a que la imagen se cargue completamente
+                    img.style.opacity = "1"; // Aparecer suavemente
+                };
+                observer.unobserve(img); // Dejar de observarla
+            }
+        });
+    }, {
+        rootMargin: "100px" // Carga imágenes antes de que entren en pantalla
+    });
 
     const inputBuscar = document.getElementById("buscar");
     let peliculasArreglo = [];
@@ -567,7 +573,7 @@
     const contenedorMetadataPop = document.getElementById('metadata-pop');
     const contenedorCerrarPop = document.getElementById('cerrar-pop');
     var jw = null;
-    const vast = "https://vast.yomeno.xyz/vast?spot_id=726610";
+    const vast = "";
 
     function openPopJW(cartel) {
         let listaCalidades = [];
