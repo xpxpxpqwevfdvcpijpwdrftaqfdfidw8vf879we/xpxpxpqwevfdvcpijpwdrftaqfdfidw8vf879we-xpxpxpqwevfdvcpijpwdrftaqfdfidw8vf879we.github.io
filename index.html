@@ -444,12 +444,39 @@
         return anioPelicula === anioActual;
     }
 
+    function debeMostrarAnuncio(idPelicula) {
+        const ultimaPelicula = localStorage.getItem("ultimaPeliculaVista");
+        const ultimaFecha = localStorage.getItem("ultimaFechaVista");
+        const fechaActual = new Date().toISOString().split("T")[0];
+
+        // Mostrar anuncio si la película es diferente o si ha pasado un día
+        return ultimaPelicula !== idPelicula || ultimaFecha !== fechaActual;
+    }
+
     function crearCarteles(cartel) {
         const videoItem = document.createElement("div");
         videoItem.classList.add("contenedor-video");
         videoItem.addEventListener('click', function () {
-            contenedorJWPLAYER.style.display = 'flex';
-            openPopJW(cartel);
+            const idPelicula = cartel.id; // Suponiendo que cada cartel tiene un identificador único
+
+            if (debeMostrarAnuncio(idPelicula)) {
+                // Mostrar anuncio y luego continuar con la reproducción
+                window.location.href = "go:anuncio";
+                
+                // Guardar la película y la fecha para futuras validaciones
+                localStorage.setItem("ultimaPeliculaVista", idPelicula);
+                localStorage.setItem("ultimaFechaVista", new Date().toISOString().split("T")[0]);
+
+                // Esperar a que el usuario regrese para continuar con la película
+                setTimeout(() => {
+                    contenedorJWPLAYER.style.display = 'flex';
+                    openPopJW(cartel);
+                }, 1000); // Puedes ajustar el tiempo si lo deseas
+            } else {
+                // Si no se debe mostrar el anuncio, continuar con la reproducción directamente
+                contenedorJWPLAYER.style.display = 'flex';
+                openPopJW(cartel);
+            }
         });
         videoItem.style.cursor = "pointer";
 
