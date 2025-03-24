@@ -668,8 +668,7 @@
         if (cartel.url) { // Verifica si el URL de audio existe
             const iconoLat = document.createElement('img');
             iconoLat.id = 'audioLat';
-            iconoLat.src = 'lat.png';
-            iconoLat.cursor = 'pointer';
+            iconoLat.src = BASE_URL + 'lat.png';
             iconoLat.addEventListener('click', function () {
                 jw.remove();
                 jw = null;
@@ -682,7 +681,7 @@
         if (cartel.urlCas) { // Verifica si el URL de audio existe
             const iconoCas = document.createElement('img');
             iconoCas.id = 'audioCas';
-            iconoCas.src = 'cas.png';
+            iconoCas.src = BASE_URL + 'cas.png';
             iconoCas.addEventListener('click', function () {
                 jw.remove();
                 jw = null;
@@ -695,7 +694,7 @@
         if (cartel.urlSub) { // Verifica si el URL de audio existe
             const iconoSub = document.createElement('img');
             iconoSub.id = 'audioSub';
-            iconoSub.src = 'sub.png';
+            iconoSub.src = BASE_URL + 'sub.png';
             iconoSub.addEventListener('click', function () {
                 jw.remove();
                 jw = null;
