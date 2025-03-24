@@ -281,7 +281,6 @@
         #titulo-pop {
             display: flex;
             position: relative;
-            ;
             font-size: 24px;
             font-weight: bold;
             padding: 10px;
@@ -341,6 +340,27 @@
             justify-content: center;
             align-items: center;
         }
+
+        #audios-pop {
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            width: 100%;
+            min-height: 75px;
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+        }
+
+        #audios-pop img {
+            width: 70px;
+            height: 70px;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -382,6 +402,7 @@
     <div id="contenedorJWPLAYER">
         <img src="https://i.imgur.com/kwxr2Fb.png" alt="Movie24">
         <div id="jw-player"></div>
+        <div id="audios-pop"></div>
         <div id="titulo-pop"></div>
         <div id="descripcion-pop"></div>
         <div id="metadata-pop"></div>
@@ -426,7 +447,7 @@
                     && !video.duracion.includes("rumble")
                     && !video.duracion.includes(".mp4")
                 ) {
-                    crearCarteles(video,fragment);
+                    crearCarteles(video, fragment);
                     contPelis += 1;
                     contenedorLista.appendChild(fragment);
                     contenedorContPelis.textContent = `Total: ${contPelis} películas. | Subiendo todos los días!!`;
@@ -462,7 +483,7 @@
             if (debeMostrarAnuncio(idPelicula)) {
                 // Mostrar anuncio y luego continuar con la reproducción
                 window.location.href = "go:anuncio";
-                
+
                 // Guardar la película y la fecha para futuras validaciones
                 localStorage.setItem("ultimaPeliculaVista", idPelicula);
                 localStorage.setItem("ultimaFechaVista", new Date().toISOString().split("T")[0]);
@@ -509,7 +530,7 @@
             videoItem.appendChild(estrenoAux);
         }
         if (proxiAux) {
-            estrenoAux.textContent = "Próximamente";
+            estrenoAux.textContent = "Próxima..";
             estrenoAux.style.color = 'white';
             estrenoAux.style.fontSize = '12px';
             estrenoAux.style.border = '1px solid green';
@@ -529,11 +550,6 @@
 
         // Agregar la imagen al DOM
         //document.body.appendChild(poster);
-
-
-
-        
-
 
         const title = document.createElement("h3");
         title.textContent = cartel.titulo;
@@ -603,36 +619,94 @@
     const vast = "";
 
     function openPopJW(cartel) {
-        let listaCalidades = [];
+        let listaCalidadesLat = [];
+        let listaCalidadesCas = [];
+        let listaCalidadesSub = [];
+
+        //Audio Latino Lista Calidades
         if (cartel.url.includes(".aaa.mp4")) {
-            listaCalidades.push({ file: cartel.url.replace(".aaa.mp4", ".aaa.mp4"), label: "1080p | 4.5 mbps", default: true });
-            listaCalidades.push({ file: cartel.url.replace(".aaa.mp4", ".haa.mp4"), label: "1080p | 4.0 mbps" });
-            listaCalidades.push({ file: cartel.url.replace(".aaa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps" });
-            listaCalidades.push({ file: cartel.url.replace(".aaa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
-            listaCalidades.push({ file: cartel.url.replace(".aaa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
-            listaCalidades.push({ file: cartel.url.replace(".aaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".aaa.mp4", ".aaa.mp4"), label: "1080p | 4.5 mbps", default: true });
+            listaCalidadesLat.push({ file: cartel.url.replace(".aaa.mp4", ".haa.mp4"), label: "1080p | 4.0 mbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".aaa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".aaa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".aaa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".aaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
         } else if (cartel.url.includes(".haa.mp4")) {
-            listaCalidades.push({ file: cartel.url.replace(".haa.mp4", ".haa.mp4"), label: "1080p | 4.0 mbps", default: true });
-            listaCalidades.push({ file: cartel.url.replace(".haa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps" });
-            listaCalidades.push({ file: cartel.url.replace(".haa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
-            listaCalidades.push({ file: cartel.url.replace(".haa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
-            listaCalidades.push({ file: cartel.url.replace(".haa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".haa.mp4", ".haa.mp4"), label: "1080p | 4.0 mbps", default: true });
+            listaCalidadesLat.push({ file: cartel.url.replace(".haa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".haa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".haa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".haa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
         } else if (cartel.url.includes(".gaa.mp4")) {
-            listaCalidades.push({ file: cartel.url.replace(".gaa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps", default: true });
-            listaCalidades.push({ file: cartel.url.replace(".gaa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
-            listaCalidades.push({ file: cartel.url.replace(".gaa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
-            listaCalidades.push({ file: cartel.url.replace(".gaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".gaa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps", default: true });
+            listaCalidadesLat.push({ file: cartel.url.replace(".gaa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".gaa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".gaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
         } else if (cartel.url.includes(".caa.mp4")) {
-            listaCalidades.push({ file: cartel.url.replace(".caa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps", default: true });
-            listaCalidades.push({ file: cartel.url.replace(".caa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
-            listaCalidades.push({ file: cartel.url.replace(".caa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".caa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps", default: true });
+            listaCalidadesLat.push({ file: cartel.url.replace(".caa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".caa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
         } else if (cartel.url.includes(".baa.mp4")) {
-            listaCalidades.push({ file: cartel.url.replace(".baa.mp4", ".baa.mp4"), label: "360p  | 640 kbps", default: true });
-            listaCalidades.push({ file: cartel.url.replace(".baa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+            listaCalidadesLat.push({ file: cartel.url.replace(".baa.mp4", ".baa.mp4"), label: "360p  | 640 kbps", default: true });
+            listaCalidadesLat.push({ file: cartel.url.replace(".baa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
         } else if (cartel.url.includes(".oaa.mp4")) {
-            listaCalidades.push({ file: cartel.url.replace(".oaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps", default: true });
+            listaCalidadesLat.push({ file: cartel.url.replace(".oaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps", default: true });
+        } else {
+            listaCalidadesLat = null;
         }
+
         closePopJW();
+
+        const contenedorBotonesAudio = document.getElementById('audios-pop');
+        
+        // Eliminar iconos de audio anteriores antes de agregar los nuevos
+        document.getElementById('audioLat')?.remove();
+        document.getElementById('audioCas')?.remove();
+        document.getElementById('audioSub')?.remove();
+
+        // Icono Latino
+        if (cartel.url) { // Verifica si el URL de audio existe
+            const iconoLat = document.createElement('img');
+            iconoLat.id = 'audioLat';
+            iconoLat.src = 'lat.png';
+            iconoLat.cursor = 'pointer';
+            iconoLat.addEventListener('click', function () {
+                jw.remove();
+                jw = null;
+                reproductorJWAudios(cartel, vast, cartel.url);
+            });
+            contenedorBotonesAudio.appendChild(iconoLat);
+        }
+
+        // Icono Castellano
+        if (cartel.urlCas) { // Verifica si el URL de audio existe
+            const iconoCas = document.createElement('img');
+            iconoCas.id = 'audioCas';
+            iconoCas.src = 'cas.png';
+            iconoCas.addEventListener('click', function () {
+                jw.remove();
+                jw = null;
+                reproductorJWAudios(cartel, vast, cartel.urlCas);
+            });
+            contenedorBotonesAudio.appendChild(iconoCas);
+        }
+
+        // Icono Subtitulado | Inglés
+        if (cartel.urlSub) { // Verifica si el URL de audio existe
+            const iconoSub = document.createElement('img');
+            iconoSub.id = 'audioSub';
+            iconoSub.src = 'sub.png';
+            iconoSub.addEventListener('click', function () {
+                jw.remove();
+                jw = null;
+                reproductorJWAudios(cartel, vast, cartel.urlSub);
+            });
+            contenedorBotonesAudio.appendChild(iconoSub);
+        }
+
+
+
+
         contenedorTituloPop.textContent = cartel.titulo;
         contenedorDescripcionPop.textContent = cartel.descripcion;
         contenedorMetadataPop.textContent = "Año: " + cartel.fecha + " | Duración: " + cartel.duracion;
@@ -640,7 +714,147 @@
         jw = jwplayer("jw-player").setup({
             "debug": 1,
             //"file": cartel.url,
-            "sources": listaCalidades,
+            "sources": listaCalidadesLat,
+            "image": cartel.poster,
+            "title": cartel.titulo,
+            "description": cartel.descripcion,
+            "height": "auto",
+            "width": "100%",
+            "playbackRateControls": true,
+            "logo": {
+                "file": cartel.perfilCanal, //watermark image path
+                "link": "", //link url on watermark image
+                "hide": "false",
+                "position": "top-right" //position of watermark on player
+            },
+            "preload": "metadata",
+            "floating": {
+                "dismissible": true
+            },
+            "repeat": false,
+            "sharing": false,
+            //{
+            //"heading": "Compartir Video",
+            //"link": "https://play.google.com/store/apps/details?id=proyecto.ja&hl=en_US",
+            //"sites": [
+            //{
+            //"icon": "https://i.imgur.com/7TleNbh.png",
+            //"src": "https://play.google.com/store/apps/details?id=proyecto.ja&hl=en_US",
+            //"label": "Play Store"
+            //}, "facebook", "twitter", "interest", "tumblr", "linkedin", "reddit", "email"
+            //]
+            //},
+            //"tracks": [{ "file": "<?php echo $cc; ?>", "label": "Español", "kind": "captions", "default": "false" },
+            //{ "file": "<?php echo $cc; ?>", "label": "English", "kind": "captions", "default": "false" }],
+            //"captions": { "color": '#ffb800', "fontSize": 30, "backgroundOpacity": 0 },
+            "skin": {
+                "controlbar": {
+                    "background": "rgba(0,0,0,0.5)",
+                    "icons": "#b8b8b8",
+                    "iconsActive": "#0066FF",
+                    "text": "#FFFFFF"
+                },
+                "menus": {
+                    "background": "#003366",
+                    "text": "#b8b8b8",
+                    "textActive": "#FFFFFF"
+                },
+                "name": "stormtrooper",
+                "timeslider": {
+                    "progress": "#0066FF"
+                },
+                "tooltips": {
+                    "background": "#0066FF",
+                    "text": "#FFFFFF"
+                }
+            },
+            "stretching": "uniform",
+            "autostart": false,
+            "cast": {},
+            "controls": true,
+            "defaultBandwidthEstimate": 5000000,
+            "displaydescription": true,
+            "displaytitle": true,
+            "aboutlink": "",
+            "abouttext": "Movie 24",
+
+
+
+            "advertising": {
+                "client": "vast",
+                "adscheduleid": "Az87bY12",
+                "schedule": [
+                    {
+                        "offset": "pre",
+                        "tag": vast
+                    },
+                    {
+                        "offset": "25%",
+                        "tag": vast
+                    },
+                    {
+                        "offset": "50%",
+                        "tag": vast
+                    },
+                    {
+                        "offset": "75%",
+                        "tag": vast
+                    },
+                    {
+                        "offset": "post",
+                        "tag": vast
+                    }
+                ]
+            },
+
+
+
+
+            //"playlist": serieData,
+            "horizontalVolumeSlider": true,
+            "volume": 100,
+            "nextupoffset": -30,
+            "related": {
+                "autoplaytimer": 20,
+                "oncomplete": "autoplay"
+            },
+            "intl": {
+                "en": {
+                    "related": {
+                        "autoplaymessage": "__title__ se reproducirá en xx segundos.",
+                        "heading": "Más Capítulos"
+                    }
+                }
+            }
+
+        });
+
+        //Tiempos dinámicos para cada video
+        videoKey = videoKey + cartel.id;
+        //Espera que el reproductor esté listo
+        jw.on("ready", function () {
+            var lastTime = localStorage.getItem(videoKey);
+            if (lastTime) {
+                jw.seek(parseFloat(lastTime)); // Reanudar desde el último tiempo guardado
+            }
+        });
+
+        // Guardar el progreso del video cada 5 segundos
+        jw.on("time", function (event) {
+            localStorage.setItem(videoKey, event.position);
+        });
+
+        // Limpiar el progreso si el video se termina
+        jw.on("complete", function () {
+            localStorage.removeItem(videoKey);
+        });
+    }
+    function reproductorJWAudios(cartel, vast, audio) {
+        var videoKey = "progreso_" + cartel.id; // Clave única por video
+        jw = jwplayer("jw-player").setup({
+            "debug": 1,
+            "file": audio,
+            //"sources": listaCalidadesLat,
             "image": cartel.poster,
             "title": cartel.titulo,
             "description": cartel.descripcion,

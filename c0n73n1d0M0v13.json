@@ -7114,14 +7114,16 @@
         "checkVerificado": "iconos/check-verificado.png"
       },
       {
-        "id": "p",
-        "miniatura": "",
-        "poster": "",
-        "url": "",
-        "titulo": "",
-        "descripcion": "",
-        "fecha": "",
-        "duracion": "",
+        "id": "p509",
+        "miniatura": "https://images.justwatch.com/poster/300557789/s592/la-proposicion.jpg",
+        "poster": "https://images.justwatch.com/backdrop/242587261/s640/la-proposicion",
+        "url": "https://hugh.cdn.rumble.cloud/video/fww1/42/s8/2/O/Q/4/v/OQ4vy.caa.mp4?u=0&b=0",
+        "urlCas": "https://hugh.cdn.rumble.cloud/video/fww1/5e/s8/2/m/O/4/v/mO4vy.caa.mp4?u=0&b=0",
+        "urlSub": "https://hugh.cdn.rumble.cloud/video/fww1/55/s8/2/c/R/4/v/cR4vy.caa.mp4?u=0&b=0",
+        "titulo": "La proposición",
+        "descripcion": "Margaret es una poderosa y estricta editora de gran éxito de Nueva York que, por un problema con su visado, de repente se enfrenta a ser deportada a Canadá, su país de origen. Para evitarlo y poder mantener su visa en Estados Unidos, la astuta ejecutiva declara que está comprometida con su joven asistente Andrew, al que lleva torturando durante años. Andrew acepta participar en la farsa, pero con algunas condiciones. La pareja se dirige entonces a Alaska a conocer la peculiar familia de él, y la ejecutiva de ciudad, acostumbrada a tener todo bajo control, se encuentra inmersa en situaciones surrealistas que escapan a cualquier lógica conocida. Con planes de boda en camino y un agente de inmigración tras sus pasos, Margaret y Andrew se comprometen a seguir con el plan previsto pese a las consecuencias.",
+        "fecha": "2009",
+        "duracion": "01h 48m",
         "calidad": "",
         "perfilCanal": "https://i.imgur.com/kwxr2Fb.png",
         "nombreCanal": "Movie 24",
@@ -9997,5 +9999,163 @@
         "nombreCanal": "Movie 24",
         "checkVerificado": "iconos/check-verificado.png"
       }
+  ],
+  "series": [
+    {
+      "id": "s1",
+      "miniatura": "https://images.justwatch.com/poster/321607367/s592/dragon-ball-daima.jpg",
+      "poster": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+      "urlLista": [
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/aa/s8/2/u/z/Z/u/uzZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x1",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/51/s8/2/m/v/Z/u/mvZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x2",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/f2/s8/2/6/z/Z/u/6zZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x3",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/b4/s8/2/I/B/Z/u/IBZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x4",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/b5/s8/2/c/C/Z/u/cCZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x5",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/6f/s8/2/E/u/Z/u/EuZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x6",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/94/s8/2/U/A/Z/u/UAZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x7",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/bf/s8/2/Y/C/Z/u/YCZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x8",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/40/s8/2/m/C/Z/u/mCZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x9",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/ee/s8/2/O/y/Z/u/OyZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x10",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/c5/s8/2/I/D/Z/u/IDZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x11",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/7b/s8/2/8/E/Z/u/8EZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x12",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/ea/s8/2/4/C/Z/u/4CZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x13",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/fd/s8/2/4/B/Z/u/4BZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x14",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/75/s8/2/s/D/Z/u/sDZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x15",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/81/s8/2/g/C/Z/u/gCZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x16",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/37/s8/2/8/C/Z/u/8CZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x17",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/6a/s8/2/G/D/Z/u/GDZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x18",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/52/s8/2/u/D/Z/u/uDZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x19",
+            "description": ""
+        },
+        {
+            "file": "https://hugh.cdn.rumble.cloud/video/fww1/bc/s8/2/C/D/Z/u/CDZuy.gaa.mp4?u=0&b=0",
+            "image": "https://images.justwatch.com/backdrop/321386277/s640/dragon-ball-daima",
+            "title": "Dragon Ball Daima 1x20",
+            "description": ""
+        }
+      ],
+      "titulo": "Dragon Ball Daima",
+      "descripcion": "Goku y sus amigos deben viajar lejos para deshacer la maldición que los ha devuelto a su yo infantil. El mundo se pone patas arriba cuando Goku y sus compañeros se transforman en niños. Para regresar a su forma original, deberán enfrentarse a nuevos mundos y desafíos sin precedentes. Chi-Chi, Majin, Buu, Krilin, Mr. Satán, Kaioshin y Vegeta se unen para ayudar a Goku y desentrañar la conspiración que los ha transformado.",
+      "fecha": "2024",
+      "duracion": "23m",
+      "calidad": "",
+      "perfilCanal": "https://i.imgur.com/kwxr2Fb.png",
+      "nombreCanal": "Movie 24",
+      "checkVerificado": "iconos/check-verificado.png"
+    },
+    {
+      "id": "s2",
+      "miniatura": "",
+      "poster": "",
+      "urlLista": [
+        {
+            "file": "https://ruta-del-video-1.mp4",
+            "image": "https://ruta-de-miniatura-1.jpg",
+            "title": "Título del Video 1",
+            "description": "Descripción del video 1"
+        }
+      ],
+      "titulo": "",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "calidad": "",
+      "perfilCanal": "https://i.imgur.com/kwxr2Fb.png",
+      "nombreCanal": "Movie 24",
+      "checkVerificado": "iconos/check-verificado.png"
+    }
   ]
 }
