@@ -400,7 +400,7 @@
         -->
     </div>
     <div id="contenedorJWPLAYER">
-        <img src="https://i.imgur.com/kwxr2Fb.png" alt="Movie24">
+        <img id="logoMovie24">
         <div id="jw-player"></div>
         <div id="audios-pop"></div>
         <div id="titulo-pop"></div>
@@ -651,8 +651,66 @@
             listaCalidadesLat.push({ file: cartel.url.replace(".baa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
         } else if (cartel.url.includes(".oaa.mp4")) {
             listaCalidadesLat.push({ file: cartel.url.replace(".oaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps", default: true });
-        } else {
-            listaCalidadesLat = null;
+        }
+
+        //Audio Castellano Lista Calidades
+        if (cartel.urlCas.includes(".aaa.mp4")) {
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".aaa.mp4", ".aaa.mp4"), label: "1080p | 4.5 mbps", default: true });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".aaa.mp4", ".haa.mp4"), label: "1080p | 4.0 mbps" });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".aaa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps" });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".aaa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".aaa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".aaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+        } else if (cartel.urlCas.includes(".haa.mp4")) {
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".haa.mp4", ".haa.mp4"), label: "1080p | 4.0 mbps", default: true });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".haa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps" });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".haa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".haa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".haa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+        } else if (cartel.urlCas.includes(".gaa.mp4")) {
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".gaa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps", default: true });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".gaa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".gaa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".gaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+        } else if (cartel.urlCas.includes(".caa.mp4")) {
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".caa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps", default: true });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".caa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".caa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+        } else if (cartel.urlCas.includes(".baa.mp4")) {
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".baa.mp4", ".baa.mp4"), label: "360p  | 640 kbps", default: true });
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".baa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+        } else if (cartel.urlCas.includes(".oaa.mp4")) {
+            listaCalidadesCas.push({ file: cartel.urlCas.replace(".oaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps", default: true });
+        }
+
+        //Audio Subtitulado | Inglés Lista Calidades
+        if (cartel.urlSub.includes(".aaa.mp4")) {
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".aaa.mp4", ".aaa.mp4"), label: "1080p | 4.5 mbps", default: true });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".aaa.mp4", ".haa.mp4"), label: "1080p | 4.0 mbps" });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".aaa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps" });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".aaa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".aaa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".aaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+        } else if (cartel.urlSub.includes(".haa.mp4")) {
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".haa.mp4", ".haa.mp4"), label: "1080p | 4.0 mbps", default: true });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".haa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps" });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".haa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".haa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".haa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+        } else if (cartel.urlSub.includes(".gaa.mp4")) {
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".gaa.mp4", ".gaa.mp4"), label: "720p  | 2.1 mbps", default: true });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".gaa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps" });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".gaa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".gaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+        } else if (cartel.urlSub.includes(".caa.mp4")) {
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".caa.mp4", ".caa.mp4"), label: "480p  | 1.0 mbps", default: true });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".caa.mp4", ".baa.mp4"), label: "360p  | 640 kbps" });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".caa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+        } else if (cartel.urlSub.includes(".baa.mp4")) {
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".baa.mp4", ".baa.mp4"), label: "360p  | 640 kbps", default: true });
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".baa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps" });
+        } else if (cartel.urlSub.includes(".oaa.mp4")) {
+            listaCalidadesSub.push({ file: cartel.urlSub.replace(".oaa.mp4", ".oaa.mp4"), label: "360p  | 200 kbps", default: true });
         }
 
         closePopJW();
@@ -672,7 +730,7 @@
             iconoLat.addEventListener('click', function () {
                 jw.remove();
                 jw = null;
-                reproductorJWAudios(cartel, vast, cartel.url);
+                reproductorJWAudios(cartel, vast, listaCalidadesLat);
             });
             contenedorBotonesAudio.appendChild(iconoLat);
         }
@@ -685,7 +743,7 @@
             iconoCas.addEventListener('click', function () {
                 jw.remove();
                 jw = null;
-                reproductorJWAudios(cartel, vast, cartel.urlCas);
+                reproductorJWAudios(cartel, vast, listaCalidadesCas);
             });
             contenedorBotonesAudio.appendChild(iconoCas);
         }
@@ -698,14 +756,13 @@
             iconoSub.addEventListener('click', function () {
                 jw.remove();
                 jw = null;
-                reproductorJWAudios(cartel, vast, cartel.urlSub);
+                reproductorJWAudios(cartel, vast, listaCalidadesSub);
             });
             contenedorBotonesAudio.appendChild(iconoSub);
         }
 
-
-
-
+        const logoMovie24 = document.getElementById('logoMovie24');
+        logoMovie24.src = BASE_URL + cartel.perfilCanal;
         contenedorTituloPop.textContent = cartel.titulo;
         contenedorDescripcionPop.textContent = cartel.descripcion;
         contenedorMetadataPop.textContent = "Año: " + cartel.fecha + " | Duración: " + cartel.duracion;
@@ -848,12 +905,12 @@
             localStorage.removeItem(videoKey);
         });
     }
-    function reproductorJWAudios(cartel, vast, audio) {
+    function reproductorJWAudios(cartel, vast, listaCalidadesAudio) {
         var videoKey = "progreso_" + cartel.id; // Clave única por video
         jw = jwplayer("jw-player").setup({
             "debug": 1,
-            "file": audio,
-            //"sources": listaCalidadesLat,
+            //"file": audio,
+            "sources": listaCalidadesAudio,
             "image": cartel.poster,
             "title": cartel.titulo,
             "description": cartel.descripcion,
