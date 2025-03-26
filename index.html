@@ -361,6 +361,43 @@
             padding: 0;
             cursor: pointer;
         }
+        .contenedor-principal
+        #contenedorFiltros{
+            display: flex;
+            position: relative;
+            flex-direction: row;
+            justify-content: start;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background-color: transparent;
+            overflow: hidden;
+            overflow-x: auto;
+        }
+        .boton-genero{
+            width: auto;
+            height: auto;
+            cursor: pointer;
+            font-size: 22px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
+            border-radius: 1rem;
+            padding-left: 15px;
+            padding-right: 20px;
+            padding-bottom: 10px;
+            text-align: center;
+            text-wrap: nowrap;
+            border: 0px;
+            background-color: #0066ff;
+            color: white;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+        .boton-genero:hover{
+            background-color: rgba(255, 255, 255, 0.2);
+        }
     </style>
 </head>
 
@@ -368,6 +405,7 @@
 
     <div class="contenedor-principal">
         <div class="contenedor-cont-pelis">Total: 0 películas</div>
+        <div id="contenedorFiltros"></div>
         <div class="contenedor-lista"></div>
     </div>
     <div id="anuncio-container1"></div>
@@ -434,14 +472,15 @@
         document.querySelector('.contenedor-lateral-derecho').style.width = document.querySelector('.contenedor-lateral-derecho').style.width === '0px' ? 'auto' : '0px';
     });
     // Función para cargar los datos desde el archivo JSON
-    fetch("c0n73n1d0M0v13.json") //DESARROLLO
-    //fetch(jsonUrl) //PRODUCCIÓN
+    fetch("c0n73n1d0M0v13.json") // DESARROLLO
+        // fetch(jsonUrl) // PRODUCCIÓN
         .then((response) => response.json()) // Convierte la respuesta en JSON
         .then((data) => {
-            //data.peliculas.sort((a, b) => b.fecha - a.fecha); //PRODUCCIÓN
-            data.peliculas.reverse(); //DESARROLLO
+            // data.peliculas.sort((a, b) => b.fecha - a.fecha); // PRODUCCIÓN
+            data.peliculas.reverse(); // DESARROLLO
             const fragment = document.createDocumentFragment();
-            //Modificar y validar según se agregen categorías del menú
+            const generosSet = new Set();
+
             data.peliculas.forEach((video) => {
                 if (video.titulo
                     && !video.titulo.includes("rumble")
@@ -454,17 +493,53 @@
                     && !video.duracion.includes(".mp4")
                 ) {
                     crearCarteles(video, fragment);
-                    contPelis += 1;
-                    contenedorLista.appendChild(fragment);
-                    contenedorContPelis.textContent = `Total: ${contPelis} películas. | Subiendo todos los días!!`;
-                    peliculasArreglo = data.peliculas;
-                }
-            })
+                    contPelis++;
 
-                .catch((error) => {
-                    console.error("Error al cargar el archivo JSON:", error);
-                });
+                    if (video.generos) {
+                        video.generos.split(',').forEach(genero => generosSet.add(genero.trim())); // Extraer géneros únicos
+                    }
+                }
+            });
+
+            contenedorLista.appendChild(fragment);
+            contenedorContPelis.textContent = `Total: ${contPelis} películas. | Subiendo todos los días!!`;
+            peliculasArreglo = data.peliculas;
+
+            // Crear botones de género con la lista de géneros únicos
+            crearBotonesGenero([...generosSet]);
+        })
+        .catch((error) => {
+            console.error("Error al cargar el archivo JSON:", error);
         });
+
+    // Función para filtrar películas por género
+    function filtrarPorGenero(generoSeleccionado) {
+        contenedorLista.innerHTML = ""; // Limpiar contenedor antes de mostrar resultados
+
+        const peliculasFiltradas = peliculasArreglo.filter(pelicula =>
+            pelicula.titulo && pelicula.generos && pelicula.generos.split(',').map(g => g.trim()).includes(generoSeleccionado)
+        );
+
+        peliculasFiltradas.forEach(crearCarteles);
+        // Actualizar el contador de películas según el género filtrado
+    contenedorContPelis.textContent = `Total: ${peliculasFiltradas.length} películas en "${generoSeleccionado}".`;
+    }
+
+    // Función para crear los botones de filtro por género
+    function crearBotonesGenero(generos) {
+        const contenedorFiltros = document.getElementById("contenedorFiltros");
+        contenedorFiltros.innerHTML = ""; // Limpiar antes de agregar
+
+        generos.forEach(genero => {
+            const btn = document.createElement("button");
+            btn.textContent = genero;
+            btn.classList.add("boton-genero");
+            btn.addEventListener("click", () => filtrarPorGenero(genero));
+            contenedorFiltros.appendChild(btn);
+        });
+    }
+
+
 
     function esEstreno(anioPelicula) {
         const anioActual = new Date().getFullYear(); // Obtiene el año actual
@@ -662,7 +737,7 @@
         closePopJW();
 
         const contenedorBotonesAudio = document.getElementById('audios-pop');
-        
+
         // Eliminar iconos de audio anteriores antes de agregar los nuevos
         document.getElementById('audioLat')?.remove();
         document.getElementById('audioCas')?.remove();
