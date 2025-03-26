@@ -362,8 +362,8 @@
             padding: 0;
             cursor: pointer;
         }
-        .contenedor-principal
-        #contenedorFiltros{
+
+        .contenedor-principal #contenedorFiltros {
             display: flex;
             position: relative;
             flex-direction: row;
@@ -377,7 +377,8 @@
             overflow: hidden;
             overflow-x: auto;
         }
-        .boton-genero{
+
+        .boton-genero {
             display: flex;
             position: relative;
             width: auto;
@@ -399,7 +400,8 @@
             margin-left: 5px;
             margin-right: 5px;
         }
-        .boton-genero:hover{
+
+        .boton-genero:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
     </style>
@@ -475,73 +477,89 @@
     contenedorContPelis.addEventListener('click', function () {
         document.querySelector('.contenedor-lateral-derecho').style.width = document.querySelector('.contenedor-lateral-derecho').style.width === '0px' ? 'auto' : '0px';
     });
+
     // Función para cargar los datos desde el archivo JSON
     fetch("c0n73n1d0M0v13.json") // DESARROLLO
-        // fetch(jsonUrl) // PRODUCCIÓN
-        .then((response) => response.json()) // Convierte la respuesta en JSON
-        .then((data) => {
+        .then(response => response.json()) // Convertir a JSON
+        .then(data => {
             // data.peliculas.sort((a, b) => b.fecha - a.fecha); // PRODUCCIÓN
             data.peliculas.reverse(); // DESARROLLO
             const fragment = document.createDocumentFragment();
             const generosSet = new Set();
+            let peliculasValidas = [];
 
-            data.peliculas.forEach((video) => {
-                if (video.titulo
-                    && !video.titulo.includes("rumble")
-                    && !video.titulo.includes(".mp4")
-                    && !video.descripcion.includes("rumble")
-                    && !video.descripcion.includes(".mp4")
-                    && !video.fecha.includes("rumble")
-                    && !video.fecha.includes(".mp4")
-                    && !video.duracion.includes("rumble")
-                    && !video.duracion.includes(".mp4")
+            data.peliculas.forEach(video => {
+                // Validar que la película tenga datos correctos
+                if (video.titulo &&
+                    !video.titulo.includes("rumble") &&
+                    !video.titulo.includes(".mp4") &&
+                    !video.descripcion.includes("rumble") &&
+                    !video.descripcion.includes(".mp4") &&
+                    !video.fecha.includes("rumble") &&
+                    !video.fecha.includes(".mp4") &&
+                    !video.duracion.includes("rumble") &&
+                    !video.duracion.includes(".mp4")
                 ) {
+                    peliculasValidas.push(video); // Agregar a la lista de películas válidas
                     crearCarteles(video, fragment);
-                    contPelis++;
 
+                    // Extraer géneros únicos y limpiarlos
                     if (video.generos) {
-                        video.generos.split(',').forEach(genero => generosSet.add(genero.trim())); // Extraer géneros únicos
+                        video.generos.split(',').forEach(genero => generosSet.add(genero.trim()));
                     }
                 }
             });
 
+            // Agregar todo el fragmento al DOM en una sola operación
             contenedorLista.appendChild(fragment);
-            contenedorContPelis.textContent = `Total: ${contPelis} películas. | Subiendo todos los días!!`;
-            peliculasArreglo = data.peliculas;
 
-            // Crear botones de género con la lista de géneros únicos
+            // Actualizar contador
+            contPelis = peliculasValidas.length;
+            contenedorContPelis.textContent = `Total: ${contPelis} películas. | Subiendo todos los días!!`;
+
+            // Guardar películas en un arreglo global para filtrar
+            peliculasArreglo = peliculasValidas;
+
+            // Crear botones de géneros una vez
             crearBotonesGenero([...generosSet]);
         })
-        .catch((error) => {
+        .catch(error => {
             console.error("Error al cargar el archivo JSON:", error);
         });
 
-    // Función para filtrar películas por género
+    // Filtrar películas por género y actualizar contador
     function filtrarPorGenero(generoSeleccionado) {
-        contenedorLista.innerHTML = ""; // Limpiar contenedor antes de mostrar resultados
+        contenedorLista.innerHTML = ""; // Limpiar el contenedor antes de mostrar resultados
 
         const peliculasFiltradas = peliculasArreglo.filter(pelicula =>
-            pelicula.titulo && pelicula.generos && pelicula.generos.split(',').map(g => g.trim()).includes(generoSeleccionado)
+            pelicula.generos && pelicula.generos.split(',').map(g => g.trim()).includes(generoSeleccionado)
         );
 
-        peliculasFiltradas.forEach(crearCarteles);
-        // Actualizar el contador de películas según el género filtrado
-    contenedorContPelis.textContent = `Total: ${peliculasFiltradas.length} películas en "${generoSeleccionado}".`;
+        const fragment = document.createDocumentFragment();
+        peliculasFiltradas.forEach(video => crearCarteles(video, fragment));
+        contenedorLista.appendChild(fragment);
+
+        // Actualizar el contador de películas filtradas
+        contenedorContPelis.textContent = `Total: ${peliculasFiltradas.length} películas en "${generoSeleccionado}".`;
     }
 
-    // Función para crear los botones de filtro por género
+    // Crear los botones de género optimizados
     function crearBotonesGenero(generos) {
         const contenedorFiltros = document.getElementById("contenedorFiltros");
         contenedorFiltros.innerHTML = ""; // Limpiar antes de agregar
 
+        const fragment = document.createDocumentFragment();
         generos.forEach(genero => {
             const btn = document.createElement("button");
             btn.textContent = genero;
             btn.classList.add("boton-genero");
             btn.addEventListener("click", () => filtrarPorGenero(genero));
-            contenedorFiltros.appendChild(btn);
+            fragment.appendChild(btn);
         });
+
+        contenedorFiltros.appendChild(fragment);
     }
+
 
 
 
