@@ -60,6 +60,7 @@
             width: 100%;
             min-width: 92px;
             height: 100%;
+            max-height: 400px;
             z-index: 3;
             background-color: rgb(0, 0, 0);
             border: 1px solid rgba(255, 255, 255, 0.5);
@@ -377,6 +378,8 @@
             overflow-x: auto;
         }
         .boton-genero{
+            display: flex;
+            position: relative;
             width: auto;
             height: auto;
             cursor: pointer;
@@ -384,10 +387,11 @@
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             font-weight: bold;
             border-radius: 1rem;
-            padding-left: 15px;
-            padding-right: 20px;
-            padding-bottom: 10px;
+            padding: 10px;
+            text-overflow: ellipsis;
             text-align: center;
+            justify-content: center;
+            align-items: center;
             text-wrap: nowrap;
             border: 0px;
             background-color: #0066ff;
