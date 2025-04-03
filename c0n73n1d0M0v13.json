@@ -10873,5 +10873,208 @@
       "nombreCanal": "Movie 24",
       "checkVerificado": "iconos/check-verificado.png"
     }
+  ],
+
+  "doramas": [
+    {
+      "id": "d1",
+      "miniatura": "https://images.justwatch.com/poster/106170270/s592/touch-your-heart.jpg",
+      "poster": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+      "urlLista": [
+        {
+          "file": "intro1.mp4",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "Un lugar en tu corazón | Touch Your Heart",
+          "description": "Oh Yoon Seo es una actriz popular. Ella es famosa por su hermosa apariencia, pero su actuación es mala. Debido a controversias y escándalos su carrera como actriz decae precipitadamente. Por lo que ella acepta un guión con la condición de obtener experiencia para el puesto requiriendo que Oh Yoon Seo trabaje como secretaria de abogado por unos 3 meses. Mientras tanto, Kwon Jung Rok es abogado de una firma de abogados,el apesar de ser arrogante y de corazón frío acepta con gran descontento la súplica de su jefe al permitir que la actriz Oh Yoon Seo trabaje como su secretaria durante 3 meses, él supone la renuncia de Oh Yoon Seo al instante pero Oh Yoon Seo no se rendirá fácilmente …."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "En una fiesta con sus colegas, Oh Yoon‑seo imprudentemente ahoga en el alcohol sus frustraciones con su jefe. Yoo Yeo‑reum se topa con un viejo amor en el trabajo."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "El lado emocional de Yoon‑seo resulta útil en un caso de oficio en el que una estudiante es acusada de estafar a sus compañeros de la escuela."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Yoon‑seo está celosa de una mujer que logra hacer que su jefe sonría. Kwon Jung‑rok descubre que su nuevo caso de acoso tiene similitudes con el pasado de Yoon‑seo."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Eligen a Jung‑rok para representar a Im Yun‑hui frente la acusación de haber asesinado a su marido, y Yoon‑seo lo acompaña para hablar con ella en persona."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Un ascensor defectuoso ocasiona un momento romántico. La búsqueda de pruebas de Jung‑rok y Yoon‑seo en la escena del crimen da un giro inesperado."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "La inexperiencia de Jung-rok con las citas lo lleva a buscar el consejo de Kim Se-won. El estrés del trabajo de Yeo-reum comienza a pasar factura. Yun-seo se encuentra con un viejo rival."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Yoon-seo descubre algo impactante sobre el pasado de Jung-rok, mientras un compañero de trabajo rescata a Dan Mun-hui. El bufete de abogados Always hace un viaje improvisado."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Yang Eun-ji recibe una llamada de la policía sobre su hija. Jung-rok y Yoon-seo descubren nuevos aspectos del otro, pero algo amenaza su felicidad."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Mun-hui intenta evitar enamorarse, Yoon-seo se enfrenta a un hombre que la sigue y uno de los miembros de la familia de Jung-rok busca su ayuda legal."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Yoon-seo le dice a Jung-rok la verdad sobre su escándalo y se enfrenta a su acosador. En honor al cumpleaños de su enamorado, Mun-hui se somete a un cambio de imagen."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Se-won descubre la conexión entre Jeong Ji-ho y Lee Kang-jun. Mun-hui recibe una invitación de su interés amoroso."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Yoon-seo regresa a su abultada agenda. Por otro lado, Jung-rok es perseguido por el regreso del caso de Im Yun-hui."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "La tensión entre Jung-rok y Yeon Jun-gyu se vuelve incontrolable. Lee Du-seop hace un gran avance en el caso. El gerente de Yoon-seo hace una confesión."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Yun-hyeok ve a Mun-hui disfrutando de su ukelele con otro hombre. Jung-rok se preocupa por la escena del beso que pronto filmará Yoon-seo."
+        },
+        {
+          "file": "",
+          "image": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
+          "title": "",
+          "description": "Yoon-seo y Jung-rok aprovechan al máximo su tiempo antes de un rodaje de un mes en el extranjero. Los antecedentes de inconstancia de Mun-hui preocupan a Yun-hyeok."
+        }
+      ],
+      "titulo": "Un lugar en tu corazón | Touch Your Heart",
+      "descripcion": "Oh Yoon Seo es una actriz popular. Ella es famosa por su hermosa apariencia, pero su actuación es mala. Debido a controversias y escándalos su carrera como actriz decae precipitadamente. Por lo que ella acepta un guión con la condición de obtener experiencia para el puesto requiriendo que Oh Yoon Seo trabaje como secretaria de abogado por unos 3 meses. Mientras tanto, Kwon Jung Rok es abogado de una firma de abogados,el apesar de ser arrogante y de corazón frío acepta con gran descontento la súplica de su jefe al permitir que la actriz Oh Yoon Seo trabaje como su secretaria durante 3 meses, él supone la renuncia de Oh Yoon Seo al instante pero Oh Yoon Seo no se rendirá fácilmente ….",
+      "fecha": "2019",
+      "duracion": "01h 03m",
+      "generos": "Todos,Drama, Comedia, Romance",
+      "calidad": "3",
+      "perfilCanal": "movie24.png",
+      "nombreCanal": "Movie 24",
+      "checkVerificado": "iconos/check-verificado.png"
+    },
+    {
+      "id": "d",
+      "miniatura": "",
+      "poster": "",
+      "urlLista": [
+        {
+          "file": "https://ruta-del-video-1.mp4",
+          "image": "https://ruta-de-miniatura-1.jpg",
+          "title": "Título del Video 1",
+          "description": "Descripción del video 1"
+        }
+      ],
+      "titulo": "",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "generos": "Todos",
+      "calidad": "",
+      "perfilCanal": "movie24.png",
+      "nombreCanal": "Movie 24",
+      "checkVerificado": "iconos/check-verificado.png"
+    },
+    {
+      "id": "d",
+      "miniatura": "",
+      "poster": "",
+      "urlLista": [
+        {
+          "file": "https://ruta-del-video-1.mp4",
+          "image": "https://ruta-de-miniatura-1.jpg",
+          "title": "Título del Video 1",
+          "description": "Descripción del video 1"
+        }
+      ],
+      "titulo": "",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "generos": "Todos",
+      "calidad": "",
+      "perfilCanal": "movie24.png",
+      "nombreCanal": "Movie 24",
+      "checkVerificado": "iconos/check-verificado.png"
+    },
+    {
+      "id": "d",
+      "miniatura": "",
+      "poster": "",
+      "urlLista": [
+        {
+          "file": "https://ruta-del-video-1.mp4",
+          "image": "https://ruta-de-miniatura-1.jpg",
+          "title": "Título del Video 1",
+          "description": "Descripción del video 1"
+        }
+      ],
+      "titulo": "",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "generos": "Todos",
+      "calidad": "",
+      "perfilCanal": "movie24.png",
+      "nombreCanal": "Movie 24",
+      "checkVerificado": "iconos/check-verificado.png"
+    },
+    {
+      "id": "d",
+      "miniatura": "",
+      "poster": "",
+      "urlLista": [
+        {
+          "file": "https://ruta-del-video-1.mp4",
+          "image": "https://ruta-de-miniatura-1.jpg",
+          "title": "Título del Video 1",
+          "description": "Descripción del video 1"
+        }
+      ],
+      "titulo": "",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "generos": "Todos",
+      "calidad": "",
+      "perfilCanal": "movie24.png",
+      "nombreCanal": "Movie 24",
+      "checkVerificado": "iconos/check-verificado.png"
+    }
   ]
 }
