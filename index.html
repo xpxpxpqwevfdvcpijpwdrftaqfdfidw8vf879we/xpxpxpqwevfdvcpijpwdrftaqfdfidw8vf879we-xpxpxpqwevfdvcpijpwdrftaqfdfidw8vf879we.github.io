@@ -404,6 +404,31 @@
         .boton-genero:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
+        #comentarios{
+            display: flex;
+            position: relative;
+            margin: 10px;
+            padding: 10px;
+            background-color: transparent;
+            border-radius: 1rem;
+            border: 1px solid rgb(255, 255, 255, 0.5);
+            cursor: pointer;
+            font-size: 16px;
+            text-shadow: 0 0 10px rgb(255, 255, 255);
+            box-shadow: inset 0 0 10px black;
+        }
+        #disqus_thread{
+            display: flex;
+            position: relative;
+            margin: 30px;
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border-radius: 1rem;
+            border: 1px solid rgb(255, 255, 255, 0.5);
+            box-shadow: inset 0 0 10px black;
+        }
     </style>
 </head>
 
@@ -452,6 +477,8 @@
         <div id="metadata-pop"></div>
         <div id="anuncio-container2"></div>
         <div id="cerrar-pop" onclick="closePopJW()">Cerrar</div>
+        <div id="comentarios">Mostrar comentarios</div>
+        <div id="disqus_thread"></div>
     </div>
 </body>
 <script>
@@ -587,6 +614,9 @@
         videoItem.classList.add("contenedor-video");
         videoItem.addEventListener('click', function () {
             const idPelicula = cartel.id; // Suponiendo que cada cartel tiene un identificador único
+            document.getElementById('comentarios').addEventListener('click',function(){
+                cargarChat(cartel.id);
+            });
 
             if (debeMostrarAnuncio(idPelicula)) {
                 // Mostrar anuncio y luego continuar con la reproducción
@@ -1188,6 +1218,34 @@
         if (document.visibilityState === "visible") {
             iniciarActualizacion();
         }
+    }
+
+
+
+    // Función para cargar Disqus dinámicamente usando el ID como identificador
+    function cargarChat(id) {
+      const url = `https://movie24.com/${id}`;
+
+      if (window.DISQUS) {
+        DISQUS.reset({
+          reload: true,
+          config: function () {
+            this.page.identifier = id;
+            this.page.url = url;
+          }
+        });
+      } else {
+        window.disqus_config = function () {
+          this.page.identifier = id;
+          this.page.url = url;
+        };
+
+        const d = document, s = d.createElement('script');
+        s.src = 'https://https-proyectoja-github-io-proyectoja.disqus.com/embed.js'; // tu subdominio
+        s.setAttribute('data-timestamp', +new Date());
+        s.id = 'disqus-script';
+        (d.head || d.body).appendChild(s);
+      }
     }
 </script>
 <script async
