@@ -505,6 +505,15 @@
         document.querySelector('.contenedor-lateral-derecho').style.width = document.querySelector('.contenedor-lateral-derecho').style.width === '0px' ? 'auto' : '0px';
     });
 
+    let peliculaActual = null;
+    document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById('comentarios').addEventListener('click', () => {
+        if (peliculaActual) {
+            cargarChat(peliculaActual);
+        }
+    });
+});
+
     // Función para cargar los datos desde el archivo JSON
     fetch("c0n73n1d0M0v13.json") // DESARROLLO
         .then(response => response.json()) // Convertir a JSON
@@ -614,9 +623,7 @@
         videoItem.classList.add("contenedor-video");
         videoItem.addEventListener('click', function () {
             const idPelicula = cartel.id; // Suponiendo que cada cartel tiene un identificador único
-            document.getElementById('comentarios').addEventListener('click',function(){
-                cargarChat(cartel.id);
-            });
+            peliculaActual = cartel.id;
 
             if (debeMostrarAnuncio(idPelicula)) {
                 // Mostrar anuncio y luego continuar con la reproducción
@@ -1223,20 +1230,20 @@
 
 
     // Función para cargar Disqus dinámicamente usando el ID como identificador
-    function cargarChat(id) {
-      const url = `https://movie24.com/${id}`;
+    function cargarChat(peliculaActual){
+      const url = `https://movie24.com/${peliculaActual}`;
 
       if (window.DISQUS) {
         DISQUS.reset({
           reload: true,
           config: function () {
-            this.page.identifier = id;
+            this.page.identifier = peliculaActual;
             this.page.url = url;
           }
         });
       } else {
         window.disqus_config = function () {
-          this.page.identifier = id;
+          this.page.identifier = peliculaActual;
           this.page.url = url;
         };
 
