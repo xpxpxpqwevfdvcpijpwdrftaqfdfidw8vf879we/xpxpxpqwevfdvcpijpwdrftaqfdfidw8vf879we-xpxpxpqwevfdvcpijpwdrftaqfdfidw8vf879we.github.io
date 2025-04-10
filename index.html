@@ -404,7 +404,7 @@
         .boton-genero:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-        #comentarios{
+        #comentarios-pop{
             display: flex;
             position: relative;
             margin: 10px;
@@ -423,7 +423,7 @@
             margin: 30px;
             padding: 10px;
             width: 100%;
-            height: 100%;
+            height: auto;
             background-color: transparent;
             border-radius: 1rem;
             border: 1px solid rgb(255, 255, 255, 0.5);
@@ -477,7 +477,7 @@
         <div id="metadata-pop"></div>
         <div id="anuncio-container2"></div>
         <div id="cerrar-pop" onclick="closePopJW()">Cerrar</div>
-        <div id="comentarios">Mostrar comentarios</div>
+        <div id="comentarios-pop" onclick="cargarChat()">Mostrar comentarios</div>
         <div id="disqus_thread"></div>
     </div>
 </body>
@@ -505,14 +505,7 @@
         document.querySelector('.contenedor-lateral-derecho').style.width = document.querySelector('.contenedor-lateral-derecho').style.width === '0px' ? 'auto' : '0px';
     });
 
-    let peliculaActual = null;
-    document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById('comentarios').addEventListener('click', () => {
-        if (peliculaActual) {
-            cargarChat(peliculaActual);
-        }
-    });
-});
+    
 
     // Función para cargar los datos desde el archivo JSON
     fetch("c0n73n1d0M0v13.json") // DESARROLLO
@@ -618,12 +611,13 @@
         return ultimaPelicula !== idPelicula || ultimaFecha !== fechaActual;
     }
 
+    
+    
     function crearCarteles(cartel) {
         const videoItem = document.createElement("div");
         videoItem.classList.add("contenedor-video");
         videoItem.addEventListener('click', function () {
             const idPelicula = cartel.id; // Suponiendo que cada cartel tiene un identificador único
-            peliculaActual = cartel.id;
 
             if (debeMostrarAnuncio(idPelicula)) {
                 // Mostrar anuncio y luego continuar con la reproducción
@@ -707,6 +701,8 @@
 
         const h3Fecha = document.createElement("h2");
         h3Fecha.textContent = cartel.fecha + " | " + cartel.duracion;
+
+        
 
         videoItem.appendChild(poster);
         // Observa la imagen recién creada
@@ -824,6 +820,7 @@
         contenedorTituloPop.textContent = cartel.titulo;
         contenedorDescripcionPop.textContent = cartel.descripcion;
         contenedorMetadataPop.textContent = "Año: " + cartel.fecha + " | Duración: " + cartel.duracion;
+
         var videoKey = "progreso_" + cartel.id; // Clave única por video
         jw = jwplayer("jw-player").setup({
             "debug": 1,
@@ -1115,10 +1112,12 @@
             window.location.href = "go:anuncio";
         });
     }
+    const contenedorDisqus = document.getElementById('disqus_thread');
     function closePopJW() {
         if (jw) {
             jw.remove();
             jw = null;
+            contenedorDisqus.textContent = '';
             contenedorJWPLAYER.style.display = 'none';
             window.location.href = "go:anuncio";
         }
@@ -1228,22 +1227,23 @@
     }
 
 
-
     // Función para cargar Disqus dinámicamente usando el ID como identificador
-    function cargarChat(peliculaActual){
-      const url = `https://movie24.com/${peliculaActual}`;
+    function cargarChat(){
+        const idAux = contenedorTituloPop.textContent.replace(/\s+/g, "_");
+        const url = `https://movie24.com/${idAux}`;
+        console.log(url);
 
       if (window.DISQUS) {
         DISQUS.reset({
           reload: true,
           config: function () {
-            this.page.identifier = peliculaActual;
+            this.page.identifier = idAux;
             this.page.url = url;
           }
         });
       } else {
         window.disqus_config = function () {
-          this.page.identifier = peliculaActual;
+          this.page.identifier = idAux;
           this.page.url = url;
         };
 
