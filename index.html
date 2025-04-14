@@ -852,10 +852,16 @@
     const contenedorCerrarPop = document.getElementById('cerrar-pop');
     var jw = null;
     const vast = "";
+    const posterPlayer = document.getElementById('jw-player');
 
     function openPopJW(cartel) {
 
-        closePopJW();
+        posterPlayer.style.backgroundImage = `url("${cartel.poster}")`;
+        posterPlayer.style.width = '100%';
+        posterPlayer.style.minHeight = '300px';
+        posterPlayer.style.backgroundPosition = 'center';
+        posterPlayer.style.backgroundRepeat = 'norepeat';
+        posterPlayer.style.backgroundSize = 'cover';
 
         const contenedorBotonesAudio = document.getElementById('audios-pop');
 
@@ -870,8 +876,7 @@
             iconoLat.id = 'audioLat';
             iconoLat.src = BASE_URL + 'lat.png';
             iconoLat.addEventListener('click', function () {
-                jw.remove();
-                jw = null;
+                
                 reproductorJWAudios(cartel, vast, cartel.url);
             });
             contenedorBotonesAudio.appendChild(iconoLat);
@@ -883,8 +888,7 @@
             iconoCas.id = 'audioCas';
             iconoCas.src = BASE_URL + 'cas.png';
             iconoCas.addEventListener('click', function () {
-                jw.remove();
-                jw = null;
+                
                 reproductorJWAudios(cartel, vast, cartel.urlCas);
             });
             contenedorBotonesAudio.appendChild(iconoCas);
@@ -896,8 +900,7 @@
             iconoSub.id = 'audioSub';
             iconoSub.src = BASE_URL + 'sub.png';
             iconoSub.addEventListener('click', function () {
-                jw.remove();
-                jw = null;
+                
                 reproductorJWAudios(cartel, vast, cartel.urlSub);
             });
             contenedorBotonesAudio.appendChild(iconoSub);
@@ -909,152 +912,12 @@
         contenedorDescripcionPop.textContent = cartel.descripcion;
         contenedorMetadataPop.textContent = "Año: " + cartel.fecha + " | Duración: " + cartel.duracion;
 
-        var videoKey = "progreso_" + cartel.id; // Clave única por video
-        jw = jwplayer("jw-player").setup({
-            "debug": 1,
-            "file": cartel.url,
-            //"sources": listaCalidadesLat,
-            "image": cartel.poster,
-            "title": cartel.titulo,
-            "description": cartel.descripcion,
-            "height": "auto",
-            "width": "100%",
-            "playbackRateControls": true,
-            "logo": {
-                "file": BASE_URL + cartel.perfilCanal, //watermark image path
-                "link": "", //link url on watermark image
-                "hide": "false",
-                "position": "top-right" //position of watermark on player
-            },
-            "preload": "metadata",
-            "floating": {
-                "dismissible": true
-            },
-            "repeat": false,
-            "sharing": false,
-            //{
-            //"heading": "Compartir Video",
-            //"link": "https://play.google.com/store/apps/details?id=proyecto.ja&hl=en_US",
-            //"sites": [
-            //{
-            //"icon": "https://i.imgur.com/7TleNbh.png",
-            //"src": "https://play.google.com/store/apps/details?id=proyecto.ja&hl=en_US",
-            //"label": "Play Store"
-            //}, "facebook", "twitter", "interest", "tumblr", "linkedin", "reddit", "email"
-            //]
-            //},
-            //"tracks": [{ "file": "<?php echo $cc; ?>", "label": "Español", "kind": "captions", "default": "false" },
-            //{ "file": "<?php echo $cc; ?>", "label": "English", "kind": "captions", "default": "false" }],
-            //"captions": { "color": '#ffb800', "fontSize": 30, "backgroundOpacity": 0 },
-            "skin": {
-                "controlbar": {
-                    "background": "rgba(0,0,0,0.5)",
-                    "icons": "#b8b8b8",
-                    "iconsActive": "#0066FF",
-                    "text": "#FFFFFF"
-                },
-                "menus": {
-                    "background": "#003366",
-                    "text": "#b8b8b8",
-                    "textActive": "#FFFFFF"
-                },
-                "name": "stormtrooper",
-                "timeslider": {
-                    "progress": "#0066FF"
-                },
-                "tooltips": {
-                    "background": "#0066FF",
-                    "text": "#FFFFFF"
-                }
-            },
-            "stretching": "uniform",
-            "autostart": false,
-            "cast": {},
-            "controls": true,
-            "defaultBandwidthEstimate": 5000000,
-            "displaydescription": true,
-            "displaytitle": true,
-            "aboutlink": "",
-            "abouttext": "Movie 24",
-
-
-
-            "advertising": {
-                "client": "vast",
-                "adscheduleid": "Az87bY12",
-                "schedule": [
-                    {
-                        "offset": "pre",
-                        "tag": vast
-                    },
-                    {
-                        "offset": "25%",
-                        "tag": vast
-                    },
-                    {
-                        "offset": "50%",
-                        "tag": vast
-                    },
-                    {
-                        "offset": "75%",
-                        "tag": vast
-                    },
-                    {
-                        "offset": "post",
-                        "tag": vast
-                    }
-                ]
-            },
-
-
-
-
-            //"playlist": serieData,
-            "horizontalVolumeSlider": true,
-            "volume": 100,
-            "nextupoffset": -30,
-            "related": {
-                "autoplaytimer": 20,
-                "oncomplete": "autoplay"
-            },
-            "intl": {
-                "en": {
-                    "related": {
-                        "autoplaymessage": "__title__ se reproducirá en xx segundos.",
-                        "heading": "Más Capítulos"
-                    }
-                }
-            }
-
-        });
-
-        //Tiempos dinámicos para cada video
-        videoKey = videoKey + cartel.id;
-        //Espera que el reproductor esté listo
-        jw.on("ready", function () {
-            var lastTime = localStorage.getItem(videoKey);
-            if (lastTime) {
-                jw.seek(parseFloat(lastTime)); // Reanudar desde el último tiempo guardado
-            }
-        });
-
-        // Guardar el progreso del video cada 5 segundos
-        jw.on("time", function (event) {
-            localStorage.setItem(videoKey, event.position);
-        });
-
-        // Limpiar el progreso si el video se termina
-        jw.on("complete", function () {
-            localStorage.removeItem(videoKey);
-            window.location.href = "go:anuncio";
-        });
-
-        jw.on("pause", function () {
-            // Mostrar anuncio y luego continuar con la reproducción
-            window.location.href = "go:anuncio";
-        });
     }
     function reproductorJWAudios(cartel, vast, audio) {
+        if (jw) {
+            jw.remove();
+            jw = null;
+        }
         var videoKey = "progreso_" + cartel.id; // Clave única por video
         jw = jwplayer("jw-player").setup({
             "debug": 1,
@@ -1089,9 +952,24 @@
             //}, "facebook", "twitter", "interest", "tumblr", "linkedin", "reddit", "email"
             //]
             //},
-            //"tracks": [{ "file": "<?php echo $cc; ?>", "label": "Español", "kind": "captions", "default": "false" },
-            //{ "file": "<?php echo $cc; ?>", "label": "English", "kind": "captions", "default": "false" }],
-            //"captions": { "color": '#ffb800', "fontSize": 30, "backgroundOpacity": 0 },
+            tracks: [
+                {
+                    file: BASE_URL + "/Subtitulos/" + cartel.id + "-lat.vtt",
+                    label: "Español",
+                    kind: "captions",
+                    default: true
+                },
+                {
+                    file: BASE_URL + "/Subtitulos/" + cartel.id + "-sub.vtt",
+                    label: "English",
+                    kind: "captions"
+                },
+                {
+                    file: BASE_URL + "/Subtitulos/" + cartel.id + "-por.vtt",
+                    label: "Portuguese",
+                    kind: "captions"
+                }
+            ],
             "skin": {
                 "controlbar": {
                     "background": "rgba(0,0,0,0.5)",
@@ -1209,6 +1087,8 @@
             contenedorJWPLAYER.style.display = 'none';
             window.location.href = "go:anuncio";
         }
+        contenedorDisqus.textContent = '';
+        contenedorJWPLAYER.style.display = 'none';
     }
 
     document.addEventListener('DOMContentLoaded', function () {
