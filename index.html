@@ -447,6 +447,56 @@
             width: 100%;
             height: 100%;
         }
+
+        .contenedor-principal #contenedorEspecial {
+            grid-column: 1 / -1;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+            width: 100%;
+            height: 400px;
+            gap: 5px;
+            background-color: transparent;
+            overflow: hidden;
+            overflow-x: auto;
+        }
+
+        .contenedor-principal #contenedorEspecial .contenedor-video-recientes {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            width: 230px;
+            height: 100%;
+            z-index: 3;
+            background-color: rgb(0, 0, 0);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+
+        }
+
+        .contenedor-video-cartel-especial .contenedor-video-recientes h3 {
+            color: white;
+            font-size: 18px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-wrap: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-left: 5px;
+            padding-right: 5px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .contenedor-lista .etiquetaListaDePeliculas, .etiquetaRecienAgregadas {
+            grid-column: 1 / -1;
+            color: white;
+            text-align: center;
+            text-wrap: nowrap;
+            font-size: 24px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            padding: 0;
+
+        }
     </style>
 </head>
 
@@ -455,7 +505,9 @@
     <div class="contenedor-principal">
         <div class="contenedor-cont-pelis">Total: 0 películas</div>
         <div id="contenedorFiltros"></div>
-        <div class="contenedor-lista"></div>
+        <div class="contenedor-lista">
+            <h3 class="etiquetaRecienAgregadas">Recién agregadas:</h3>
+        </div>
     </div>
     <div id="anuncio-container1"></div>
     <div class="contenedor-buscador">
@@ -524,19 +576,40 @@
     });
 
 
+    let banderaCartel = false;
+    let arregloAux = [];
+    if (document.getElementById('contenedorEspecial')) {
+        const contenedorEspecial = document.getElementById('contenedorEspecial');
+    }
 
     // Función para cargar los datos desde el archivo JSON
     fetch("c0n73n1d0M0v13.json") // DESARROLLO
         .then(response => response.json()) // Convertir a JSON
         .then(data => {
             limpiarTodasLasURLs(data);
-            // data.peliculas.sort((a, b) => b.fecha - a.fecha); // PRODUCCIÓN
-            data.peliculas.reverse(); // DESARROLLO
+
+            // ✅ Filtrar las que tengan url y urlSub válidas
+            const soloValidas = data.peliculas.filter(video =>
+                video.url && video.url.trim() !== "" ||
+                video.urlSub && video.urlSub.trim() !== "" ||
+                video.urlCas && video.urlCas.trim() !== ""
+            );
+
+            // ✅ Tomar los últimos 10 válidos
+            arregloAux = soloValidas.slice(-10);
+
+            data.peliculas.sort((a, b) => b.fecha - a.fecha); // PRODUCCIÓN
             const fragment = document.createDocumentFragment();
             const generosSet = new Set();
             let peliculasValidas = [];
 
             data.peliculas.forEach(video => {
+                //Creación cartel primero de construcción
+                if (!banderaCartel) {
+                    crearCartelEspecial(video, fragment);
+                    banderaCartel = true;
+                }
+
                 // Validar que la película tenga datos correctos
                 if (video.titulo &&
                     !video.titulo.includes("rumble") &&
@@ -566,6 +639,7 @@
             // Agregar todo el fragmento al DOM en una sola operación
             contenedorLista.appendChild(fragment);
 
+
             // Actualizar contador
             contPelis = peliculasValidas.length;
             contenedorContPelis.textContent = `Total: ${contPelis} películas. | Subiendo todos los días!!`;
@@ -575,6 +649,16 @@
 
             // Crear botones de géneros una vez
             crearBotonesGenero([...generosSet]);
+
+            //Películas Recientes
+            if (banderaCartel) {
+                arregloAux.reverse();
+                const fragmentRecientes = document.createDocumentFragment();
+                arregloAux.forEach(video => {
+                    crearCartelesRecientes(video, fragmentRecientes);
+                });
+                contenedorEspecial.appendChild(fragmentRecientes);
+            }
         })
         .catch(error => {
             console.error("Error al cargar el archivo JSON:", error);
@@ -664,7 +748,17 @@
         return ultimaPelicula !== idPelicula || ultimaFecha !== fechaActual;
     }
 
+    function crearCartelEspecial(cartel) {
+        const videoItem = document.createElement("div");
+        videoItem.classList.add("contenedor-video-cartel-especial");
+        videoItem.id = 'contenedorEspecial';
 
+        const etiqueta = document.createElement('h3');
+        etiqueta.textContent = 'Lista de películas:';
+        etiqueta.className = 'etiquetaListaDePeliculas';
+        contenedorLista.appendChild(videoItem);
+        contenedorLista.appendChild(etiqueta);
+    }
 
     function crearCarteles(cartel) {
         const videoItem = document.createElement("div");
@@ -790,16 +884,63 @@
         const h3Fecha = document.createElement("h2");
         h3Fecha.textContent = cartel.fecha + " | " + cartel.duracion;
 
-
-
         videoItem.appendChild(poster);
         // Observa la imagen recién creada
         observer.observe(poster);
+
         videoItem.appendChild(title);
         videoItem.appendChild(h3Fecha);
 
         //Modificar y validar según se agregen categorías del menú
         contenedorLista.appendChild(videoItem);
+    }
+
+    function crearCartelesRecientes(cartel) {
+        const videoItem = document.createElement("div");
+        videoItem.classList.add("contenedor-video-recientes");
+        videoItem.addEventListener('click', function () {
+            const idPelicula = cartel.id; // Suponiendo que cada cartel tiene un identificador único
+
+            if (debeMostrarAnuncio(idPelicula)) {
+                // Mostrar anuncio y luego continuar con la reproducción
+                window.location.href = "go:anuncio";
+
+                // Guardar la película y la fecha para futuras validaciones
+                localStorage.setItem("ultimaPeliculaVista", idPelicula);
+                localStorage.setItem("ultimaFechaVista", new Date().toISOString().split("T")[0]);
+
+                // Esperar a que el usuario regrese para continuar con la película
+                setTimeout(() => {
+                    contenedorJWPLAYER.style.display = 'flex';
+                    openPopJW(cartel);
+                }, 1000); // Puedes ajustar el tiempo si lo deseas
+            } else {
+                // Si no se debe mostrar el anuncio, continuar con la reproducción directamente
+                contenedorJWPLAYER.style.display = 'flex';
+                openPopJW(cartel);
+            }
+        });
+        videoItem.style.cursor = "pointer";
+
+        // Crear imágenes con carga diferida
+        const poster = document.createElement("img");
+        poster.dataset.src = cartel.miniatura; // Guardamos la URL en data-src
+        poster.alt = cartel.nombreCanal;
+        poster.classList.add("lazy"); // Agregamos una clase para identificarlas 
+        poster.style.opacity = '0';
+        poster.style.transition = 'opacity 0.2s ease-in-out';
+
+        const title = document.createElement("h3");
+        title.textContent = cartel.titulo;
+
+        videoItem.appendChild(poster);
+        // Observa la imagen recién creada
+        observer.observe(poster);
+
+        videoItem.appendChild(title);
+
+        //Modificar y validar según se agregen categorías del menú
+        contenedorEspecial.appendChild(videoItem);
     }
 
     // Usamos IntersectionObserver para cargar solo cuando la imagen sea visible
