@@ -161,7 +161,7 @@
             text-shadow: 0 0 10px rgb(255, 255, 255);
         }
 
-        .contenedor-cont-pelis {
+        .etiqueta1 {
             display: flex;
             position: relative;
             width: 100%;
@@ -435,7 +435,7 @@
 <body>
 
     <div class="contenedor-principal">
-        <div class="contenedor-cont-pelis">Total: 0 Doramas</div>
+        <div class="etiqueta1"><div class="contenedor-cont-pelis"></div><span id="contUsuarios"></span></div>
         <div id="contenedorFiltros"></div>
         <div class="contenedor-lista"></div>
     </div>
@@ -481,6 +481,9 @@
         <div id="disqus_thread"></div>
     </div>
 </body>
+<script>
+    document.addEventListener('contextmenu', event => event.preventDefault());
+</script>
 <script>
     var BASE_URL = "https://xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we.github.io/xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we-xpxpxpqwevfdvcpijpwdrftaqfdfidw8vf879we.github.io/";
     var script = document.createElement("script");
@@ -548,7 +551,7 @@
 
             // Actualizar contador
             contPelis = peliculasValidas.length;
-            contenedorContPelis.textContent = `Total: ${contPelis} Doramas. | Favoritas de Movie 24 y pedidos.`;
+            contenedorContPelis.textContent = `Total: ${contPelis} Doramas. | Favoritas de Movie 24 y pedidos. `;
 
             // Guardar películas en un arreglo global para filtrar
             peliculasArreglo = peliculasValidas;
@@ -606,7 +609,7 @@
         contenedorLista.appendChild(fragment);
 
         // Actualizar el contador de películas filtradas
-        contenedorContPelis.textContent = `Total: ${peliculasFiltradas.length} Doramas en "${generoSeleccionado}". | Favoritas de Movie 24 y pedidos.`;
+        contenedorContPelis.textContent = `Total: ${peliculasFiltradas.length} Doramas en "${generoSeleccionado}". | Favoritas de Movie 24 y pedidos. `;
     }
 
     // Crear los botones de género optimizados
@@ -1320,6 +1323,15 @@
             (d.head || d.body).appendChild(s);
         }
     }
+
+    const contUsuarios = document.getElementById('contUsuarios');
+        document.addEventListener('chatLoaded', function () {
+            document.addEventListener('chatbroPtCountChanging', function (event) {
+                const count = event?.ptCount?.web ?? 0;
+                const onlineDiv = `👁️ ${count}`;
+                contUsuarios.textContent = `| Viendo pelis: ${onlineDiv}`;
+            });
+        });
 </script>
 <script async
     id="chatBroEmbedCode">/* Chatbro Widget Embed Code Start */function ChatbroLoader(chats, async) { async = !1 !== async; var params = { embedChatsParameters: chats instanceof Array ? chats : [chats], lang: navigator.language || navigator.userLanguage, needLoadCode: 'undefined' == typeof Chatbro, embedParamsVersion: localStorage.embedParamsVersion, chatbroScriptVersion: localStorage.chatbroScriptVersion }, xhr = new XMLHttpRequest; xhr.withCredentials = !0, xhr.onload = function () { eval(xhr.responseText) }, xhr.onerror = function () { console.error('Chatbro loading error') }, xhr.open('GET', 'https://www.chatbro.com/embed.js?' + btoa(unescape(encodeURIComponent(JSON.stringify(params)))), async), xhr.send() }/* Chatbro Widget Embed Code End */ChatbroLoader({ encodedChatId: '98wVn' });</script>
