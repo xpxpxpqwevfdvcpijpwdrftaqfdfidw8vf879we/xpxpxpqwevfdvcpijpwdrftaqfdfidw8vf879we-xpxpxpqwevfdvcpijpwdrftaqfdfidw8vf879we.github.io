@@ -1230,8 +1230,13 @@
         if (jw) {
             jw.remove();
             jw = null;
-            document.getElementById("vistas").textContent = "";
         }
+        document.getElementById("vistas").textContent = "";
+        document.getElementById("textLike").textContent = "0";
+        document.getElementById("textDislike").textContent = "0";
+        document.getElementById("contenedorVotar").style.display = "flex";
+        document.getElementById("btnLike").src = BASE_URL + "like.png";
+        document.getElementById("btnDislike").src = BASE_URL + "dislike.png";
         contadorDeVistas(cartel);
         var videoKey = "progreso_" + cartel.id; // Clave única por video
         jw = jwplayer("jw-player").setup({
@@ -1406,6 +1411,11 @@
         contenedorDisqus.textContent = '';
         contenedorJWPLAYER.style.display = 'none';
         document.getElementById("vistas").textContent = "";
+        document.getElementById("textLike").textContent = "0";
+        document.getElementById("textDislike").textContent = "0";
+        document.getElementById("contenedorVotar").style.display = "none";
+        document.getElementById("btnLike").src = BASE_URL + "like.png";
+        document.getElementById("btnDislike").src = BASE_URL + "dislike.png";
     }
 
     document.addEventListener('DOMContentLoaded', function () {
