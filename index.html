@@ -498,6 +498,78 @@
             padding: 0;
 
         }
+
+        #contenedorVotar {
+            display: none;
+            position: relative;
+            flex-direction: row;
+            width: auto;
+            padding: 10px;
+            height: auto;
+            justify-content: center;
+            align-items: center;
+            margin: 0%;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            border: 1px solid rgb(255, 255, 255, 0.5);
+            border-radius: 1rem;
+            background-color: black;
+        }
+
+        #contenedorLike,
+        #contenedorDislike {
+            display: flex;
+            position: relative;
+            width: auto;
+            height: auto;
+            padding: 0%;
+            margin: 0%;
+            justify-content: center;
+            align-items: center;
+            background-color: transparent;
+        }
+
+        #contenedorLike img,
+        #contenedorDislike img {
+            display: flex;
+            position: relative;
+            width: 50px;
+            height: auto;
+            cursor: pointer;
+            background-color: transparent;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 0%;
+            margin: 0%;
+        }
+
+        #vistas {
+            display: flex;
+            position: relative;
+            width: auto;
+            height: auto;
+            padding: 10px;
+            font-size: 20px;
+            color: white;
+            border: 1px solid rgb(255, 255, 255, 0.5);
+            border-radius: 1rem;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+        }
+
+        #linea {
+            width: 1px;
+            height: 100%;
+            background-color: rgb(255, 255, 255, 0.5);
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #textLike,#textDislike{
+            margin-left: 10px;
+        }
     </style>
 </head>
 
@@ -535,9 +607,9 @@
         <a href='https://www.pferdeversicherung.at/pferdelebensversicherung/'>Lebensversicherung Pferd</a>
         <script type='text/javascript'
             src='https://www.whomania.com/ctr?id=81511a8b7b2afc5d46f191ef53f2654c19d7644c'></script>
-        <!--<a href="https://www.andyhoppe.com/" title="Contador"><img 
+        <a href="https://www.andyhoppe.com/" title="Contador"><img 
             src="//c.andyhoppe.com/1740793490" style="border:none" alt="Contador" /></a>
-        -->
+        
     </div>
     <div id="contenedorJWPLAYER">
         <img id="logoMovie24">
@@ -545,6 +617,15 @@
         <div id="audios-pop"></div>
         <div id="titulo-pop"></div>
         <div id="vistas"></div>
+        <div id="contenedorVotar">
+            <div id="contenedorLike"><img id="btnLike" onclick="votar('like')">
+                <h3 id="textLike">0</h3>
+            </div>
+            <div id="linea"></div>
+            <div id="contenedorDislike"><img id="btnDislike" onclick="votar('dislike')">
+                <h3 id="textDislike">0</h3>
+            </div>
+        </div>
         <div id="descripcion-pop"></div>
         <div id="metadata-pop"></div>
         <div id="anuncio-container2"></div>
@@ -587,6 +668,9 @@
     if (document.getElementById('contenedorEspecial')) {
         const contenedorEspecial = document.getElementById('contenedorEspecial');
     }
+
+    document.getElementById("btnLike").src = BASE_URL + "like.png";
+    document.getElementById("btnDislike").src = BASE_URL + "dislike.png";
 
     // Función para cargar los datos desde el archivo JSON
     fetch("c0n73n1d0M0v13.json") // DESARROLLO
@@ -1061,21 +1145,85 @@
 
     }
 
+    const url = "https://script.google.com/macros/s/AKfycbzzO1wPlALoC7xRr3H_53jrcttUxllRvZS0MJjAopNd7lIUQEZYPHidWFD2yZupjVkVEA/exec";
+    const cooldown = 10 * 1000;
+    var cartelAux;
     function contadorDeVistas(cartel) {
-        // Tu URL del Web App de Google Apps Script
-        const url = "https://script.google.com/macros/s/AKfycbzzO1wPlALoC7xRr3H_53jrcttUxllRvZS0MJjAopNd7lIUQEZYPHidWFD2yZupjVkVEA/exec?id=" + "movie24_" + cartel.id;
-
-        // Fetch al Web App para incrementar y obtener el contador
-        
-        fetch(url)
-            .then(response => response.text())
-            .then(visitas => {
-                document.getElementById("vistas").textContent = visitas + " de vistas";
-            })
+        cartelAux = cartel.id;
+        fetch(`${url}?id=${cartelAux}&action=visita`)
+            .then(res => res.json())
+            .then(data => 
+            actualizarStats(data),
+            marcarBotonVotado(getVotoAnterior())
+        )
+            
             .catch(err => {
                 document.getElementById("vistas").textContent = "Error al cargar vistas.";
                 console.error(err);
             });
+    }
+    function actualizarStats(data) {
+        document.getElementById("vistas").textContent = data.visitas + " de vistas";
+        document.getElementById("textLike").textContent = data.likes;
+        document.getElementById("textDislike").textContent = data.dislikes;
+    }
+
+    function puedeEnviar(accion) {
+        const clave = `${cartelAux}_${accion}_cooldown`;
+        const ultima = localStorage.getItem(clave);
+        const ahora = Date.now();
+        if (!ultima || ahora - ultima > cooldown) {
+            localStorage.setItem(clave, ahora);
+            return true;
+        }
+        return false;
+    }
+
+    function getVotoAnterior() {
+        return localStorage.getItem(`${cartelAux}_voto`);
+    }
+
+    function setVoto(voto) {
+        localStorage.setItem(`${cartelAux}_voto`, voto);
+    }
+
+    function votar(nuevoVoto) {
+        const anterior = getVotoAnterior();
+        if (anterior === nuevoVoto) {
+            
+            return;
+        }
+
+        if (!puedeEnviar(nuevoVoto)) {
+            return;
+        }
+
+        let urlFinal = `${url}?id=${cartelAux}&action=${nuevoVoto}`;
+        if (anterior) {
+            urlFinal += `&undo=${anterior}`;
+        }
+
+        fetch(urlFinal)
+            .then(res => res.json())
+            .then(data => {
+                actualizarStats(data);
+                setVoto(nuevoVoto);
+                marcarBotonVotado(nuevoVoto);
+            })
+            .catch(err => console.error("Error:", err));
+    }
+
+    function marcarBotonVotado(voto) {
+        const btnLike = document.getElementById("btnLike");
+        const btnDislike = document.getElementById("btnDislike");
+
+        if (voto === "like") {
+            btnLike.src = BASE_URL + "like2.png";
+            btnDislike.src = BASE_URL + "dislike.png";
+        } else if (voto === "dislike") {
+            btnLike.src = BASE_URL + "like.png";
+            btnDislike.src = BASE_URL + "dislike2.png";
+        }
     }
 
     function reproductorJWAudios(cartel, vast, audio) {
