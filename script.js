@@ -818,7 +818,7 @@ function openPopJW(cartel) {
   }
 
   const logoMovie24 = document.getElementById("logoMovie24");
-  logoMovie24.src = BASE_URL + "logo1.png";
+  logoMovie24.src = BASE_URL + "movie24.png";
   contenedorTituloPop.textContent = cartel.titulo;
   contenedorGenerosPop.textContent = "Genero: " + cartel.generos.replace(/^\s*todos\s*,?\s*/i, '');
   contenedorDescripcionPop.textContent = cartel.descripcion;
@@ -1084,7 +1084,7 @@ console.log(document.title);
       },
     },
 
-    watermark: BASE_URL + "logo1.png",
+    watermark: BASE_URL + "movie24.png",
     position: "top-right",
   });
 
