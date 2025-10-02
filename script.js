@@ -28,7 +28,7 @@ document.getElementById("btnDislike").src = BASE_URL + "dislike.png";
 
 // Función para cargar los datos desde el archivo JSON
 fetch(jsonUrl) // PRODUCCIÓN
-  //fetch("contenido.json") //DESARROLLO
+  //fetch("c0n73n1d0M0v13.json") //DESARROLLO
   .then((response) => response.json()) // Convertir a JSON
   .then((data) => {
     limpiarTodasLasURLs(data);
