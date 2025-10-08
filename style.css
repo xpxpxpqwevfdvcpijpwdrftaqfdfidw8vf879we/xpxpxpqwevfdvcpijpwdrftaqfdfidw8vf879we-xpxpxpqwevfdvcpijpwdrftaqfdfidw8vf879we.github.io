@@ -276,9 +276,7 @@ html,body {
     text-shadow: 0 0 10px black;
   }
   
-  #player {
-    height: auto;
-  }
+  
   
   .jw-icon-pip {
     display: none !important;
