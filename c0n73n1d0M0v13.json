@@ -13390,6 +13390,7 @@
   "doramas": [
     {
       "id": "d1",
+      "url": "",
       "miniatura": "https://images.justwatch.com/poster/106170270/s592/touch-your-heart.jpg",
       "poster": "https://images.justwatch.com/backdrop/307435830/s640/touch-your-heart",
       "urlLista": [
@@ -13490,20 +13491,20 @@
           "description": "Yoon-seo y Jung-rok aprovechan al máximo su tiempo antes de un rodaje de un mes en el extranjero. Los antecedentes de inconstancia de Mun-hui preocupan a Yun-hyeok."
         }
       ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "Un lugar en tu corazón | Touch Your Heart",
       "descripcion": "Oh Yoon Seo es una actriz popular. Ella es famosa por su hermosa apariencia, pero su actuación es mala. Debido a controversias y escándalos su carrera como actriz decae precipitadamente. Por lo que ella acepta un guión con la condición de obtener experiencia para el puesto requiriendo que Oh Yoon Seo trabaje como secretaria de abogado por unos 3 meses. Mientras tanto, Kwon Jung Rok es abogado de una firma de abogados,el apesar de ser arrogante y de corazón frío acepta con gran descontento la súplica de su jefe al permitir que la actriz Oh Yoon Seo trabaje como su secretaria durante 3 meses, él supone la renuncia de Oh Yoon Seo al instante pero Oh Yoon Seo no se rendirá fácilmente ….",
       "fecha": "2019",
       "duracion": "01h 03m",
       "generos": "Todos,Drama, Comedia, Romance",
       "calidad": "3",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
+      "perfilCanal": "",
+      "nombreCanal": "",
+      "pais": "",
       "checkVerificado": "iconos/check-verificado.png"
     },
     {
       "id": "d2",
+      "url": "",
       "miniatura": "https://images.justwatch.com/poster/264630485/s592/doctores.jpg",
       "poster": "https://images.justwatch.com/backdrop/264630487/s640/doctores",
       "urlLista": [
@@ -13670,929 +13671,541 @@
           "description": "Una adolescente que tuvo una infancia dura se inspira en cambiar su rumbo con la ayuda de un mentor, por lo que decide estudiar para convertirse en una neurocirujana."
         }
       ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "Doctores | Doctors",
       "descripcion": "En su infancia y adolescencia, Yoo Hye Jung (Park Shin Hye) pasó una época difícil. Es huérfana de madre; su padre, al verse imposibilitado de controlarla, la abandona. Hye Jung termina viviendo con su abuela y asistiendo a una secundaria de chicas, donde conoce al profesor Hong Ji Hong (Kim Rae Won) y a Jin Seo Woo (Lee Sung Kyung), la mejor alumna de su clase. Hye Jung es una gángster de personalidad tosca y rebelde, mentirosa y despreocupada, pero luego se propone a mejorar su comportamiento y encuentra a un mentor en Ji Hong, quién además es su vecino. Esto los lleva a crear un vínculo especial entre ellos. Hye Jung logra ser la mejor de su clase en el examen de matemáticas, lo que provoco molestia a Seo Woo. Cuando Seo Woo, quién tiene sentimientos por Ji Hong, ve la cercanía con la que se tratan éste y Hye Jung, arma un escándalo que obliga a ambos a abandonar la escuela. Trece años después, Hye Jung se convierte en residente de neurocirugía y se reencuentra con Seo Woo y Ji Hong, quiénes también son doctores, en el hospital en el que trabaja.",
       "fecha": "2016",
       "duracion": "59m",
       "generos": "Todos,Drama, Comedia, Romance",
       "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
+      "perfilCanal": "",
+      "nombreCanal": "",
+      "pais": "",
       "checkVerificado": "iconos/check-verificado.png"
     },
     {
-      "id": "d",
+      "id": "d3",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "d4",
+      "seguidores": "",
+      "miniatura": "",
+      "poster": "",
+      "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "pais": "",
+      "generos": "Todos",
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "d5",
+      "seguidores": "",
+      "miniatura": "",
+      "poster": "",
+      "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "pais": "",
+      "generos": "Todos",
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "d6",
+      "seguidores": "",
+      "miniatura": "",
+      "poster": "",
+      "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "pais": "",
+      "generos": "Todos",
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "d7",
+      "seguidores": "",
+      "miniatura": "",
+      "poster": "",
+      "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "pais": "",
+      "generos": "Todos",
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "d8",
+      "seguidores": "",
+      "miniatura": "",
+      "poster": "",
+      "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "pais": "",
+      "generos": "Todos",
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "d9",
+      "seguidores": "",
+      "miniatura": "",
+      "poster": "",
+      "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "pais": "",
+      "generos": "Todos",
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
+    },
+    {
+      "id": "d10",
+      "seguidores": "",
+      "miniatura": "",
+      "poster": "",
+      "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
+      "descripcion": "",
+      "fecha": "",
+      "duracion": "",
+      "pais": "",
+      "generos": "Todos",
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      "calidad": "",
+      "url": "",
+      "urlLista": [
+        {
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
+        }
+      ]
     },
     {
       "id": "d",
+      "seguidores": "",
       "miniatura": "",
       "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
       "titulo": "",
+      "perfilCanal": "",
+      "nombreCanal": "KDramas: Momentos doramas",
+      "checkVerificado": "iconos/check-verificado.png",
       "descripcion": "",
       "fecha": "",
       "duracion": "",
+      "pais": "",
       "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
+      "calidad": "",
+      "url": "",
       "urlLista": [
         {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
+          "file": "",
+          "image": "",
+          "title": "",
+          "description": ""
         }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
-    },
-    {
-      "id": "d",
-      "miniatura": "",
-      "poster": "",
-      "urlLista": [
-        {
-          "file": "https://ruta-del-video-1.mp4",
-          "image": "https://ruta-de-miniatura-1.jpg",
-          "title": "Título del Video 1",
-          "description": "Descripción del video 1"
-        }
-      ],
-      "urlSub": "",
-      "urlCas": "",
-      "titulo": "",
-      "descripcion": "",
-      "fecha": "",
-      "duracion": "",
-      "generos": "Todos",
-      "calidad": "2",
-      "perfilCanal": "movie24.png",
-      "nombreCanal": "Movie 24",
-      "checkVerificado": "iconos/check-verificado.png"
+      ]
     }
   ]
 }
